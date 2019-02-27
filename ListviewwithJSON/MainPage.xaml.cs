@@ -6,10 +6,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using ListviewwithJSON.Models;
-
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using ListviewwithJSON.Models;
 
 namespace ListviewwithJSON {
     public partial class MainPage : ContentPage {
@@ -29,7 +28,6 @@ namespace ListviewwithJSON {
 
             using (var reader = new System.IO.StreamReader(stream)) {
                 var jsonAsString = reader.ReadToEnd();
-                //productsDataFromJson = JsonConvert.DeserializeObject<List<ProductsData>>(jsonAsString);
                 productsDataFromJson = ProductsData.FromJson(jsonAsString);
             }
 
