@@ -1,63 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ListviewwithJSON"
-    x:Class="ListviewwithJSON.MainPage">
+<ContentPage
+    xmlns               = "http://xamarin.com/schemas/2014/forms"
+    xmlns:x              = "http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local          = "clr-namespace:ListviewwithJSON"
+    xmlns:ios            = "clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea = "true"
+    x:Class              = "ListviewwithJSON.MainPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition
-                Height="50" />
+                Height = "Auto" />
             <RowDefinition
-                Height="*" />
+                Height = "*" />
         </Grid.RowDefinitions>
         <Label
-            Grid.Row="0"
-            x:Name="locationLabel"
-            HorizontalOptions="Center"
-            Text="Products" />
+            Grid.Row          = "0"
+            HorizontalOptions = "Center"
+            Text              = "Products" />
         <ListView
-            x:Name="ProductsListView"
-            Grid.Row="1"
-            >
+            x:Name        = "ProductsListView"
+            Grid.Row      = "1"
+            HasUnevenRows = "true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem
-                                Text="More"
-                                CommandParameter="{Binding .}" />
+                                Text             = "More Info"
+                                CommandParameter = "{Binding .}" />
                         </ViewCell.ContextActions>
                         <ViewCell.View>
                             <Grid
-                                x:Name="ListViewGrid">
+                                x:Name = "ListViewGrid">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition
-                                        Width="Auto" />
+                                        Width = "Auto" />
                                     <ColumnDefinition
-                                        Width="Auto" />
+                                        Width = "Auto" />
                                     <ColumnDefinition
-                                        Width="Auto" />
-                                    <ColumnDefinition
-                                        Width="Auto" />
+                                        Width = "*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition
-                                        Height="*" />
+                                        Height = "*" />
                                     <RowDefinition
-                                        Height="*" />
+                                        Height = "*" />
                                 </Grid.RowDefinitions>
+                                <Image
+                                    Margin       = "5,0,0,0"
+                                    Grid.Column  = "0"
+                                    Grid.Row     = "0"
+                                    Grid.RowSpan = "2"
+                                    Source       = "{Binding ImageUrl}" />
                                 <Label
-                                    Grid.Column="0"
-                                    Grid.Row="0"
-                                    Text="{Binding ProductId}"
-                                />
+                                    Grid.Column = "1"
+                                    Grid.Row    = "0"
+                                    Text        = "{Binding ProductName}" />
                                 <Label
-                                    Grid.Column="1"
-                                    Grid.Row="0"
-                                Text="{Binding ProductName}"/>
+                                    Grid.Column = "1"
+                                    Grid.Row    = "1"
+                                    Text        = "{Binding ProductCode, StringFormat='Code: {0}'}" />
                                 <Label
-                                    Grid.Column="2"
-                                    Grid.Row="0"/>
+                                    Margin                  = "0,0,5,0"
+                                    HorizontalOptions       = "EndAndExpand"
+                                    HorizontalTextAlignment = "End"
+                                    Grid.Column             = "2"
+                                    Grid.Row                = "0"
+                                    Text                    = "{Binding Price, StringFormat='${0:0.00}'}" />
+                                <Label
+                                    Margin                  = "0,0,5,0"
+                                    HorizontalOptions       = "EndAndExpand"
+                                    HorizontalTextAlignment = "End"
+                                    Grid.Column             = "2"
+                                    Grid.Row                = "1"
+                                    Text                    = "{Binding StarRating, StringFormat='Rated: {0}/5'}" />
                             </Grid>
                         </ViewCell.View>
                     </ViewCell>
