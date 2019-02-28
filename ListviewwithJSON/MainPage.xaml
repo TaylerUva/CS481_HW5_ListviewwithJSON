@@ -16,6 +16,8 @@
         <Label
             Grid.Row          = "0"
             HorizontalOptions = "Center"
+            FontSize          = "Large"
+            FontAttributes    = "Bold,Italic"
             Text              = "Products" />
         <ListView
             x:Name        = "ProductsListView"
@@ -34,7 +36,7 @@
                                 x:Name = "ListViewGrid">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition
-                                        Width = "Auto" />
+                                        Width = "64" />
                                     <ColumnDefinition
                                         Width = "Auto" />
                                     <ColumnDefinition
@@ -53,19 +55,23 @@
                                     Grid.RowSpan = "2"
                                     Source       = "{Binding ImageUrl}" />
                                 <Label
-                                    Grid.Column = "1"
-                                    Grid.Row    = "0"
-                                    Text        = "{Binding ProductName}" />
+                                    Grid.Column    = "1"
+                                    Grid.Row       = "0"
+                                    TextColor      = "Navy"
+                                    FontAttributes = "Bold"
+                                    Text           = "{Binding ProductName}" />
                                 <Label
-                                    Grid.Column = "1"
-                                    Grid.Row    = "1"
-                                    Text        = "{Binding ProductCode, StringFormat='Code: {0}'}" />
+                                    Grid.Column    = "1"
+                                    Grid.Row       = "1"
+                                    FontAttributes = "Italic"
+                                    Text           = "{Binding ProductCode, StringFormat='Code: {0}'}" />
                                 <Label
                                     Margin                  = "0,0,5,0"
                                     HorizontalOptions       = "EndAndExpand"
                                     HorizontalTextAlignment = "End"
                                     Grid.Column             = "2"
                                     Grid.Row                = "0"
+                                    TextColor               = "Green"
                                     Text                    = "{Binding Price, StringFormat='${0:0.00}'}" />
                                 <Label
                                     Margin                  = "0,0,5,0"
@@ -73,6 +79,7 @@
                                     HorizontalTextAlignment = "End"
                                     Grid.Column             = "2"
                                     Grid.Row                = "1"
+                                    TextColor               = "Olive"
                                     Text                    = "{Binding StarRating, StringFormat='Rated: {0}/5'}" />
                             </Grid>
                         </ViewCell.View>
