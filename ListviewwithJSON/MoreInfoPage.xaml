@@ -42,7 +42,7 @@
             Grid.Row                = "1"
             Grid.ColumnSpan         = "2"
             FontAttributes          = "Italic"
-            Text                    = "{Binding ProductCode, StringFormat='Code: {0}'}" />
+            Text                    = "{Binding ProductCode, StringFormat='Product Code: {0}'}" />
         <Image
             Margin          = "5"
             Grid.Row        = "2"
