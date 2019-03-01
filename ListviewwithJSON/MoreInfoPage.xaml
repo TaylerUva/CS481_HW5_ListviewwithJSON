@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns  = "http://xamarin.com/schemas/2014/forms"
+    xmlns:x = "http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding ProductName}"
+    x:Class = "ListviewwithJSON.MoreInfoPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height = "Auto" />
+            <RowDefinition
+                Height = "Auto" />
+            <RowDefinition
+                Height = "*" />
+            <RowDefinition
+                Height = "Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            HorizontalTextAlignment = "Center"
+            Grid.Row                = "0"
+            TextColor               = "Navy"
+            FontAttributes          = "Bold"
+            Text                    = "{Binding ProductName}" />
+        <Label
+            HorizontalTextAlignment = "Center"
+            Grid.Row                = "1"
+            FontAttributes          = "Italic"
+            Text                    = "{Binding ProductCode, StringFormat='Code: {0}'}" />
+        <Image
+            Grid.Row = "2"
+            Source   = "{Binding ImageUrl}" />
+        <Label
+            HorizontalTextAlignment = "Center"
+            Grid.Row                = "3"
+            Text                    = "{Binding Description}" />
+    </Grid>
+</ContentPage>

@@ -34,6 +34,13 @@ namespace ListviewwithJSON {
 
             ProductsListView.ItemsSource = new ObservableCollection<ProductsData>(productsDataFromJson);
         }
+
+        async void Handle_Clicked(object sender, System.EventArgs e) {
+            var menuItem = (MenuItem)sender;
+            var itemClicked = menuItem.CommandParameter as ProductsData;
+            await Navigation.PushAsync(new MoreInfoPage(itemClicked));
+
+        }
     }
 }
 
