@@ -14,7 +14,9 @@
             <RowDefinition
                 Height = "Auto" />
             <RowDefinition
-                Height = "*" />
+                Height = "300" />
+            <RowDefinition
+                Height = "Auto" />
             <RowDefinition
                 Height = "Auto" />
             <RowDefinition
@@ -58,5 +60,10 @@
             TextColor               = "Olive"
             HorizontalTextAlignment = "Center"
             Text                    = "{Binding StarRating, StringFormat='Rated: {0}/5'}" />
+        <Label
+            Grid.ColumnSpan         = "2"
+            Grid.Row                = "5"
+            HorizontalTextAlignment = "Center"
+            Text                    = "{Binding ReleaseDate, StringFormat='Released: {0}'}" />
     </Grid>
 </ContentPage>
