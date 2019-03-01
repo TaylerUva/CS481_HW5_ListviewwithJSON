@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-    xmlns  = "http://xamarin.com/schemas/2014/forms"
-    xmlns:x = "http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="{Binding ProductName}"
-    x:Class = "ListviewwithJSON.MoreInfoPage">
-    <Grid>
+    xmlns               = "http://xamarin.com/schemas/2014/forms"
+    xmlns:x              = "http://schemas.microsoft.com/winfx/2009/xaml"
+    Title                = "{Binding ProductName}"
+    xmlns:ios            = "clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea = "true"
+    x:Class              = "ListviewwithJSON.MoreInfoPage">
+    <Grid
+        Margin = "5">
         <Grid.RowDefinitions>
             <RowDefinition
                 Height = "Auto" />
@@ -14,24 +17,34 @@
                 Height = "*" />
             <RowDefinition
                 Height = "Auto" />
+            <RowDefinition
+                Height = "Auto" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width = "*" />
+            <ColumnDefinition
+                Width = "*" />
+        </Grid.ColumnDefinitions>
         <Label
             HorizontalTextAlignment = "Center"
             Grid.Row                = "0"
-            TextColor               = "Navy"
-            FontAttributes          = "Bold"
-            Text                    = "{Binding ProductName}" />
+            Grid.ColumnSpan         = "2"
+            Text                    = "{Binding ProductId, StringFormat='Product ID: '}" />
         <Label
             HorizontalTextAlignment = "Center"
             Grid.Row                = "1"
+            Grid.ColumnSpan         = "2"
             FontAttributes          = "Italic"
             Text                    = "{Binding ProductCode, StringFormat='Code: {0}'}" />
         <Image
-            Grid.Row = "2"
-            Source   = "{Binding ImageUrl}" />
+            Grid.Row        = "2"
+            Grid.ColumnSpan = "2"
+            Source          = "{Binding ImageUrl}" />
         <Label
             HorizontalTextAlignment = "Center"
             Grid.Row                = "3"
+            Grid.ColumnSpan         = "2"
             Text                    = "{Binding Description}" />
     </Grid>
 </ContentPage>

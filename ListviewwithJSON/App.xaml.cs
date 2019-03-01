@@ -8,7 +8,11 @@ namespace ListviewwithJSON {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage()) {
+                BarBackgroundColor = Color.Teal,
+                BarTextColor = Color.White
+            };
+
         }
 
         protected override void OnStart() {

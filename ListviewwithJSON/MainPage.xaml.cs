@@ -16,7 +16,6 @@ namespace ListviewwithJSON {
 
         public MainPage() {
             InitializeComponent();
-
             ReadInJsonFile();
         }
 
